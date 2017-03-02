@@ -4,5 +4,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="lime_main_background">#84c22c</color>           <!-- lime green -->
-    <color name="light_yellow_text">#EC7B1C</color>
+    <color name="upgrade_btn_color">#EC7B1C</color>
 </resources>

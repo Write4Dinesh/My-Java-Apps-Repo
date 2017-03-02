@@ -24,6 +24,7 @@ public class HomeActivity extends Activity {
 
     private void launchUpgradeActivity() {
         Intent intent = new Intent(this, WFMUpgradeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }
