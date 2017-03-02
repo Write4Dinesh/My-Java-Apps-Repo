@@ -7,10 +7,10 @@ import java.util.ArrayList;
  */
 
 public class WordWrapMain {
-    private static final int FIRST_LINE_LENGTH = 26;
+    private static final int FIRST_LINE_LENGTH = 24;
 
     public static void main(String[] args) {
-        String original = "This is the First Line This is the 2nd line  \nThis is the 3rd line";
+        String original = "Fingerling Potato Tostones";
         ArrayList<String> lines = splitLines(original, FIRST_LINE_LENGTH);
         for (String line : lines) {
             System.out.println(line);
