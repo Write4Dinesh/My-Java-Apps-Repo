@@ -2,4 +2,13 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="upgrade_logo_top_margin">82dp</dimen>
+    <dimen name="upgrade_logo_bottom_margin">54dp</dimen>
+    <dimen name="upgrade_logo_width">105dp</dimen>
+    <dimen name="upgrade_logo_height">105dp</dimen>
+    <dimen name="upgrade_btn_height">45dp</dimen>
+    <dimen name="upgrade_btn_width">190dp</dimen>
+    <dimen name="upgrade_btn_top_margin">48dp</dimen>
+    <dimen name="upgrade_btn_text_size">20sp</dimen>
+    <dimen name="upgrade_title_text_size">20sp</dimen>
 </resources>
