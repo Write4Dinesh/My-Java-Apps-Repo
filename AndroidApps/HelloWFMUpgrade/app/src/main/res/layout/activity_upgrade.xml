@@ -23,19 +23,20 @@
         android:layout_centerHorizontal="true"
         android:text="@string/upgrade_title"
         android:textSize="@dimen/upgrade_title_text_size"
-        android:textColor="#333333"
+        android:textColor="@color/upgrade_title_color"
         android:textAlignment="center" />
 
     <TextView
         android:id="@+id/upgrade_note_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/upgrade_note_block_width"
         android:layout_height="wrap_content"
         android:layout_below="@+id/upgrade_title_tv"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/upgrade_note_text_size"
         android:text="@string/upgrade_note"
-        android:textSize="15sp"
-        android:textColor="#333333"
+        android:textSize="@dimen/upgrade_note_text_size"
+        android:textColor="@color/upgrade_title_color"
+        android:lineSpacingExtra="@dimen/upgrade_note_line_spacing"
         android:textAlignment="center" />
 
     <Button
@@ -48,10 +49,12 @@
         android:background="@color/upgrade_btn_color"
         android:foreground="?android:attr/selectableItemBackground"
         android:textSize="@dimen/upgrade_btn_text_size"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textColor="#ffffff"
+        android:textColor="@android:color/white"
+        android:paddingLeft="@dimen/upgrade_btn_padding_left"
+        android:paddingRight="@dimen/upgrade_btn_padding_right"
         android:textAlignment="center"
         android:textAllCaps="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"
         android:text="@string/upgrade_button_label" />
 </RelativeLayout>

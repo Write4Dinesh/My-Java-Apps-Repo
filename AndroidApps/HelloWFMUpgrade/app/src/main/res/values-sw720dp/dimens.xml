@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="upgrade_logo_width">170dp</dimen>
+    <dimen name="upgrade_logo_height">170dp</dimen>
+    <dimen name="upgrade_logo_top_margin">100dp</dimen>
+    <dimen name="upgrade_title_text_size">32sp</dimen>
+    <dimen name="upgrade_note_text_size">24sp</dimen>
+    <dimen name="upgrade_note_block_width">573dp</dimen>
+    <dimen name="upgrade_btn_height">71dp</dimen>
+    <dimen name="upgrade_btn_width">288dp</dimen>
+    <dimen name="upgrade_btn_text_size">30sp</dimen>
+    <dimen name="upgrade_btn_padding_left">33dp</dimen>
+    <dimen name="upgrade_btn_padding_right">33dp</dimen>
+</resources>
