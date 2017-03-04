@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class SGHttpClient {
     public static final String PROTOCOL_HTTP = "http";
@@ -41,11 +42,14 @@ public class SGHttpClient {
             pw.println();
             pw.flush();
             BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            String t;
-            while ((t = br.readLine()) != null) {
-                System.out.println(t);
+            ArrayList<String> lines = new ArrayList<>();
+            String line;
+            while ((line = br.readLine()) != null) {
+                lines.add(line);
+                //System.out.println(line);
             }
             br.close();
+           mResponse.setRaw(lines);
         } catch (IOException e) {
             e.printStackTrace();
         }
