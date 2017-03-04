@@ -17,36 +17,42 @@ public class UrlParser {
         String path;
 
         if (url != null && !url.isEmpty()) {
-            if (url.contains("http") && !url.contains("https")) {
-                mParsedUrl.setProtocol("http");
-                url = url.substring(url.indexOf("http"), url.length());
-            } else if (url.contains("https")) {
-                mParsedUrl.setProtocol("https");
-                url = url.substring(url.indexOf("https"), url.length());
+            if (url.contains(SGHttpClient.PROTOCOL_HTTPS)) {
+                mParsedUrl.setProtocol(SGHttpClient.PROTOCOL_HTTPS);
+                url = url.substring(url.indexOf(SGHttpClient.PROTOCOL_HTTPS) + 3, url.length());
+            } else if (url.contains(SGHttpClient.PROTOCOL_HTTP)) {
+                mParsedUrl.setProtocol(SGHttpClient.PROTOCOL_HTTP);
+                url = url.substring(url.indexOf(SGHttpClient.PROTOCOL_HTTPS), url.length());
+                url = url.substring(url.indexOf(SGHttpClient.PROTOCOL_HTTP) + 3, url.length());
             }
             if (url != null && url.indexOf("/") != -1) {
                 String host = url.substring(0, url.indexOf("/"));
                 mParsedUrl.setHostName(host);
                 url = url.substring(url.indexOf("/"), url.length());
-            }
-            if (url != null && url.contains("?")) {
-                path = url.substring(0, url.indexOf("?"));
-                mParsedUrl.setPath(path);
-                url = url.substring(url.indexOf("?"), url.length());
-            }
-            if (url != null) {
-                HashMap<String, String> params = new HashMap<>();
-                String[] params1 = url.split("&");
-                if (params1 != null && params1.length > 0) {
-                    for (String s : params1) {
-                        String[] map = s.split("=");
-                        if (map != null && map.length == 2) {
-                            params.put(map[0], map[1]);
+                if (url != null && url.indexOf("?") != -1) {
+                    path = url.substring(0, url.indexOf("?"));
+                    mParsedUrl.setPath(path);
+                    url = url.substring(url.indexOf("?"), url.length());
+                    if (url != null && !url.isEmpty()) {
+                        HashMap<String, String> params = new HashMap<>();
+                        String[] keyValue = url.split("&");
+                        if (keyValue != null && keyValue.length > 0) {
+                            for (String s : keyValue) {
+                                String[] map = s.split("=");
+                                if (map != null && map.length == 2) {
+                                    params.put(map[0], map[1]);
+                                }
+                            }
                         }
+                        mParsedUrl.setParams(params);
                     }
                 }
-                mParsedUrl.setParams(params);
+            } else {
+                mParsedUrl.setHostName(url);
+                return mParsedUrl;
             }
+
+
         }
         return mParsedUrl;
     }

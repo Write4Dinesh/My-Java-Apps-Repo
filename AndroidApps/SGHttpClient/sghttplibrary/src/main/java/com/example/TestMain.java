@@ -14,14 +14,15 @@ import java.net.Socket;
 public class TestMain {
 
     public static void main(String[] args) {
-       //makeHttpRequest();
-        SGHttpRequest request =  new SGHttpRequest();
-        request.addHeader("Host","stackoverflow.com");
-        request.setMethod("GET");
+        //makeHttpRequest();
+        SGHttpRequest request = new SGHttpRequest();
+        request.addHeader("Host", "stackoverflow.com");
+        request.setMethod(SGHttpClient.HTTP_METHOD_GET);
         SGHttpClient client = new SGHttpClient();
-        client.equals(request);
+        client.execute("stackoverflow.com", request);
     }
-    private static void makeHttpRequest(){
+
+    private static void makeHttpRequest() {
         try {
             Socket socket = new Socket(InetAddress.getByName("stackoverflow.com"), 80);
             PrintWriter pw = new PrintWriter(socket.getOutputStream());

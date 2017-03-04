@@ -8,6 +8,10 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 public class SGHttpClient {
+    public static final String PROTOCOL_HTTP = "http";
+    public static final String PROTOCOL_HTTPS = "https";
+    public static final String HTTP_METHOD_GET = "GET";
+    public static final String HTTP_METHOD_POST = "POST";
     public static final int PORT = 80;
     private SGHttpRequest mRequest;
     private SGHttpResponse mResponse;
@@ -19,8 +23,9 @@ public class SGHttpClient {
 
     public SGHttpResponse execute(String url, SGHttpRequest request) {
         mRequest = request;
+        mRequest.setUrl(url);
         mUrl = url;
-          submitRequest();
+        submitRequest();
         return mResponse;
     }
 
@@ -33,7 +38,6 @@ public class SGHttpClient {
             for (SGHttpRequest.Header header : mRequest.getHeaders()) {
                 pw.println(header.mKey + ":" + header.mValue);
             }
-            pw.println("Host:" + parsedUrl.getHostName());
             pw.println();
             pw.flush();
             BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
