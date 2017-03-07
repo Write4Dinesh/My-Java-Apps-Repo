@@ -8,6 +8,7 @@
     <dimen name="upgrade_logo_bottom_margin">40dp</dimen>
     <dimen name="upgrade_title_text_size">26sp</dimen>
     <dimen name="upgrade_note_text_size">17sp</dimen>
+    <dimen name="upgrade_note_top_margin">17dp</dimen>
     <dimen name="upgrade_note_line_spacing">6dp</dimen>
     <dimen name="upgrade_note_block_width">330dp</dimen>
     <dimen name="upgrade_btn_height">56dp</dimen>
