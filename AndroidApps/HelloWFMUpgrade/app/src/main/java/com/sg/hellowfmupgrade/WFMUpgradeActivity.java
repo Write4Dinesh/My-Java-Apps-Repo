@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class WFMUpgradeActivity extends Activity {
+public class WFMUpgradeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
