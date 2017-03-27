@@ -46,7 +46,7 @@ public class SGHttpClient {
             String line;
             while ((line = br.readLine()) != null) {
                 lines.add(line);
-                //System.out.println(line);
+                System.out.println(line);
             }
             br.close();
            mResponse.setRaw(lines);
