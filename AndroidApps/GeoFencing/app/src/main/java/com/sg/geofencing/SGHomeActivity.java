@@ -66,9 +66,11 @@ public class SGHomeActivity extends Activity implements GoogleApiClient.Connecti
         int[] transition = new int[]{
                 Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT
         };
-        Geofence myHomeFence = createGeoFence(MY_HOME_FENCE_ID, 12.90404, 75.09044, GEOFENCE_RADIUS, oneDay, transition);
+        //My Home : 12.9220761,77.4854912
+        Geofence myHomeFence = createGeoFence(MY_HOME_FENCE_ID, 12.9220761, 77.4854912, GEOFENCE_RADIUS, oneDay, transition);
 
         // Create GoogleApiClient instance
+        initGMaps();
     }
 
     public static Intent makeNotificationIntent(Context geofenceService, String msg) {
