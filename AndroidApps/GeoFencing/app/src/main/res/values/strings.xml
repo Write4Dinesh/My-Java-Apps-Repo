@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GeoFencing</string>
+    <string name="app_name">SGTrackMyKids</string>
     <string name="latitude">Latitude = </string>
     <string name="longitude">Longitude = </string>
 </resources>
