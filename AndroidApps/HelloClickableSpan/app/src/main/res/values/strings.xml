@@ -4,4 +4,6 @@
     <string name="tnc_spannable">Terms &amp; Conditions</string>
     <string name="tou_spannable">Terms of Use</string>
     <string name="pp_spannable">Privacy Policy</string>
+    <string name="cent_symbol">¢</string>
+
 </resources>

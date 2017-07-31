@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:id="@+id/coupon_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@color/no_textures_light_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <GridLayout
+            android:id="@+id/gl_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:columnCount="2"
+            android:orientation="vertical"
+            android:rowCount="5">
+
+            <com.wholefoods.wholefoodsmarket.core.customviews.WFMLegalGothicRegularTextView
+                android:id="@+id/tv_coupon_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_marginTop="15dp"
+                android:layout_row="0"
+                android:minLines="2"
+                android:paddingLeft="15dp"
+                android:paddingRight="50dp"
+                android:text="365 Everyday Value Organic Chewy Granola Bars WORD LMT"
+                android:textColor="@color/blacktextcolor"
+                android:textSize="22sp" />
+            <!-- B50c off 365 Everyday Value Organic Chewy Granola B50c off 365 Everyday Value Organic Chewy Granola B50c off 365 Everyday Value Organic Chewy Granola B"-->
+            <com.wholefoods.wholefoodsmarket.core.customviews.WFMLegalGothicRegularTextView
+                android:id="@+id/tv_coupon_subtitle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:paddingLeft="15dp"
+                android:paddingTop="2dp"
+                android:text="50c off 365 Everyday Value"
+                android:textColor="@color/coupons_subtitle_green"
+                android:textSize="30sp" />
+
+            <!-- Picture of the sale item -->
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/iv_coupon_picture"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_column="1"
+                android:layout_gravity="right|top"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_row="1"
+                android:layout_rowSpan="2"
+                android:contentDescription="Produce Image"
+                android:paddingBottom="5dp"
+                android:scaleType="fitCenter"
+                android:textSize="12sp" />
+
+            <com.wholefoods.wholefoodsmarket.core.customviews.WFMLucidanaTextView
+                android:id="@+id/tv_coupon_offer_detail"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="2"
+                android:paddingLeft="15dp"
+                android:text="50c off 365 Everyday Value Organic Chewy Granola B50c off 365 Everyday Value Organic Chewy Granola B50c off 365 Everyday Value Organic Chewy Granola B50c off 365 Everyday Value Organic Chewy Granola B"
+                android:textColor="@color/blacktextcolor" />
+
+            <com.wholefoods.wholefoodsmarket.core.customviews.WFMLucidanaTextView
+                android:id="@+id/tv_coupon_offer_detail_long"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_row="3"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="@color/blacktextcolor" />
+
+            <com.wholefoods.wholefoodsmarket.core.customviews.WFMLucidanaTextView
+                android:id="@+id/tv_coupon_valid_date"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_column="0"
+                android:layout_row="4"
+                android:gravity="bottom"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:text="Valid 01/01/01"
+                android:textColor="@color/blacktextcolor" />
+            <!--
+            <Button
+                android:id="@+id/bt_more_details"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+
+                android:layout_gravity="bottom|right"
+                android:background="@drawable/info_button_medium"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="15dp"
+                />
+                        -->
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/bt_more_details"
+                app:borderWidth="0dp"
+                app:elevation="4dp"
+                app:fabSize="mini"
+                app:rippleColor="@color/orangelightcolor"
+                android:layout_width="@dimen/fab_width"
+                android:layout_height="@dimen/fab_height"
+                android:layout_column="1"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="@dimen/fab_margin_bottom"
+                android:layout_marginRight="@dimen/fab_margin_right"
+                android:layout_row="4"
+                android:scaleType="center"
+                android:src="@drawable/ic_info_small_v2"
+                android:tint="@android:color/white" />
+
+        </GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_redeemed_button"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="right"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
