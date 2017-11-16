@@ -11,8 +11,10 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
+import android.text.style.CharacterStyle;
 import android.text.style.ClickableSpan;
 import android.text.style.MetricAffectingSpan;
+import android.text.style.StyleSpan;
 import android.text.style.SuperscriptSpan;
 import android.text.style.TextAppearanceSpan;
 import android.util.DisplayMetrics;
@@ -22,6 +24,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.logging.Logger;
 
 import static java.security.AccessController.getContext;
 
@@ -38,14 +42,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        WFMRescueTextVIew textView = (WFMRescueTextVIew) findViewById(R.id.tnc_tv);
+        makeTextColor();
+        //makeTextBold();
+       /* WFMRescueTextVIew textView = (WFMRescueTextVIew) findViewById(R.id.tnc_tv);
         Spanned spannded = Html.fromHtml("&cent;");
         String cent = getString(R.string.cent_symbol);
         String str = "Save 50¢ on any ONE (1) Package of Cut Basil from Produce Department. Valid 6/21-6/27/17. Excludes basil plants.\n" +
                 "\n" +
                 "Limit one coupon per purchase of specified product(s) per individual. Valid customer bar code must be presented at checkout. Quantities are limited and may not be available in all stores; no rain checks. Prices may vary. We reserve the right to correct errors. Void to the extent prohibited or restricted by law. No monetary value. Valid only in the U.S.A. Not valid at Whole Foods Market™ 365 locations.";
 
-        textView.setText(spannded.toString() + str);
+        textView.setText(spannded.toString() + str);*/
         //textView.setText(resizeDigitsInTheText(sampleString,30));
 
         /*SpannableString spannableString = new SpannableString("RM123.456");
@@ -299,6 +305,83 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void updateMeasureState(TextPaint tp) {
             tp.baselineShift += (int) (tp.ascent() / 1.25);
+        }
+    }
+
+    private void testList(){
+        class Data implements Comparable {
+            int rank;
+            String desc;
+            String type;
+            public Data(int rank,String desc, String type){
+                this.rank = rank;
+                this.desc = desc;
+                this.type = type;
+            }
+
+            @Override
+            public String toString() {
+                return "Data{" +
+                        "rank=" + rank +
+                        ", desc='" + desc + '\'' +
+                        ", type='" + type + '\'' +
+                        '}';
+            }
+
+            @Override
+            public int compareTo(Object obj) {
+                int value = 0;
+                Data o = (Data) obj;
+                if (o.type.equals(type)) {
+                    if (rank > o.rank) value = 1;
+                    else if (rank < o.rank) value = -1;
+                } else if (type.equals("strategy")) {
+                    value = -1;
+                } else {
+                    value = 1;
+                }
+                return value;
+            }
+        }
+        ArrayList<Data> list = new ArrayList<>();
+        list.add(new Data(5,"five","coupon"));
+        list.add(new Data(1,"one","strategy"));
+        list.add(new Data(4,"four","coupon"));
+        list.add(new Data(7,"seven","strategy"));
+        list.add(new Data(3,"three","coupon"));
+        Collections.sort(list);
+
+        Log.d("TestList",list.toString());
+    }
+    private void makeTextBold(){
+          String src =  "As of September 27, 2017,updates to the Whole Foods Market app will no longer be available outside of the United States.";
+        String src1 = "September 27, 2017";
+
+        SpannableString spannableString = new SpannableString(src);
+        StyleSpan styleSpan = new StyleSpan(android.graphics.Typeface.BOLD);
+        int start = src.indexOf(src1);
+        int end = start + src1.length();
+        TextView tncTv = (TextView) findViewById(R.id.tnc_tv);
+        spannableString.setSpan(styleSpan,start,end,Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        tncTv.setText(spannableString);
+    }
+
+    private void makeTextColor(){
+        String src =  "Name*";
+        String src1 = "*";
+
+        SpannableString spannableString = new SpannableString(src);
+        StringColor styleSpan = new StringColor();
+        int start = src.indexOf(src1);
+        int end = start + src1.length();
+        TextView tncTv = (TextView) findViewById(R.id.tnc_tv);
+        spannableString.setSpan(styleSpan,start,end,Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        tncTv.setText(spannableString);
+    }
+    private class StringColor extends CharacterStyle {
+        @Override
+        public void updateDrawState(TextPaint tp) {
+            tp.setColor(getResources().getColor(android.R.color.holo_green_dark));
         }
     }
 }
