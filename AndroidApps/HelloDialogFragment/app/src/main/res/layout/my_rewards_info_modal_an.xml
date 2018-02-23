@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:layout_marginBottom="14.3dp"
+    android:layout_marginLeft="@dimen/reward_modal_margin_side"
+    android:layout_marginRight="@dimen/reward_modal_margin_side"
+    android:layout_marginTop="14.3dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="83.3dp"
+                    android:layout_height="83.3dp"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="13dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/dummy_img01" />
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.sg.hellodialogfragment.WFMAvenirNextMediumTextView
+                        android:id="@+id/topmost_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:lineSpacingExtra="6dp"
+                        android:text="@string/top_text"
+                        android:textColor="#333333"
+                        android:textSize="16sp" />
+
+                    <com.sg.hellodialogfragment.WFMAvenirNextMediumTextView
+                        android:id="@+id/price_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:lineSpacingExtra="6dp"
+                        android:text="@string/price_text"
+                        android:textColor="@color/price_text_color"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top_layout"
+                android:orientation="vertical">
+
+                <com.sg.hellodialogfragment.WFMAvenirNextMediumTextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="6dp"
+                    android:text="@string/text1"
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
+
+                <com.sg.hellodialogfragment.WFMAvenirNextMediumTextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:lineSpacingExtra="6dp"
+                    android:text="@string/text2"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="6dp"
+                    android:text="@string/text3"
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="38.8dp">
+
+        <Button
+            android:id="@+id/close_button"
+            android:layout_width="121.2dp"
+            android:layout_height="@dimen/reward_button_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="16.5dp"
+            android:layout_weight="5"
+            android:background="@drawable/rewards_close_button_background"
+            android:text="@string/close"
+            android:textAllCaps="false"
+            android:textColor="@color/enabled_my_store_button"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/add_to_favorites_button"
+            android:layout_width="146dp"
+            android:layout_height="@dimen/reward_button_height"
+            android:layout_weight="5"
+            android:background="@drawable/enabled_my_store_button_background"
+            android:text="@string/add_to_favorites"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>
