@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">HelloClickableSpan</string>
-    <string name="an_agree_term_conditions_info1">I have reviewed and agree to the Whole Foods Market Rewards Terms &amp; Conditions, the Whole Foods Market Privacy Policy and the Whole Foods Market Terms of Use.</string>
-    <string name="tnc_spannable">Terms &amp; Conditions</string>
-    <string name="tou_spannable">Terms of Use</string>
-    <string name="pp_spannable">Privacy Policy</string>
-    <string name="cent_symbol">¢</string>
-
-</resources>

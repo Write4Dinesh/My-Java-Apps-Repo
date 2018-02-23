@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">HelloWFMUpgrade</string>
-
-    <string name="upgrade_title">Update required</string>
-    <string name="upgrade_note">We\'ve made some changes to the app \n to improve your experience and \n provide added stability. Please update \n
-from the Google Play Store now.</string>
-    <string name="upgrade_button_label">Get the update</string>
-</resources>
