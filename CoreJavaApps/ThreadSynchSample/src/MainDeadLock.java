@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 public class MainDeadLock {
     public static void main(String args[]) {
-        Keyboard keyboard = new Keyboard();
-		 Display display = new Display();
+        final Keyboard keyboard = new Keyboard();
+		final  Display display = new Display();
 		 keyboard.setDisplay(display);
 		 display.setKeyboard(keyboard);
        

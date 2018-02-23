@@ -7,17 +7,17 @@
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 55,
-                    "endColumn": 51,
-                    "endOffset": 102
+                    "endColumn": 59,
+                    "endOffset": 110
                 },
                 "from": {
                     "file": "C:\\AndroidStudioWorkspace\\samples\\MySampleAppsRepo\\AndroidApps\\HelloAndroid\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 3,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 116,
-                        "endColumn": 51,
-                        "endOffset": 163
+                        "startOffset": 299,
+                        "endColumn": 59,
+                        "endOffset": 354
                     }
                 }
             },
@@ -25,18 +25,42 @@
                 "to": {
                     "startLine": 3,
                     "startColumn": 4,
-                    "startOffset": 107,
+                    "startOffset": 115,
+                    "endColumn": 51,
+                    "endOffset": 162
+                },
+                "from": {
+                    "file": "C:\\AndroidStudioWorkspace\\samples\\MySampleAppsRepo\\AndroidApps\\HelloAndroid\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 167,
                     "endColumn": 60,
-                    "endOffset": 163
+                    "endOffset": 223
+                },
+                "from": {
+                    "file": "C:\\AndroidStudioWorkspace\\samples\\MySampleAppsRepo\\AndroidApps\\HelloAndroid\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 228,
+                    "endColumn": 130,
+                    "endOffset": 354
                 },
                 "from": {
                     "file": "C:\\AndroidStudioWorkspace\\samples\\MySampleAppsRepo\\AndroidApps\\HelloAndroid\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 2,
+                        "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 60,
-                        "endOffset": 111
+                        "startOffset": 168,
+                        "endColumn": 130,
+                        "endOffset": 294
                     }
                 }
             }

@@ -16,8 +16,11 @@ public final class R {
     public static final class id {
         public static final int button_layout=0x7f060006;
         public static final int et_layout=0x7f060000;
+        public static final int location_perm_desc_tv=0x7f06000b;
+        public static final int location_settings_tv=0x7f06000c;
         public static final int offer_id_et=0x7f060005;
         public static final int offer_id_tv=0x7f060003;
+        public static final int permission_layout=0x7f06000a;
         public static final int profile_id_et=0x7f060004;
         public static final int profile_id_tv=0x7f060002;
         public static final int profile_lv=0x7f060009;
@@ -33,7 +36,9 @@ public final class R {
         public static final int ormlite_config=0x7f040000;
     }
     public static final class string {
-        public static final int app_name=0x7f050000;
-        public static final int hello=0x7f050001;
+        public static final int allow_location_permission=0x7f050000;
+        public static final int app_name=0x7f050001;
+        public static final int hello=0x7f050002;
+        public static final int location_permission_desc=0x7f050003;
     }
 }

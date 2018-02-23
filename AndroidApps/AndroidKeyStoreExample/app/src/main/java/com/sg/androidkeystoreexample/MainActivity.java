@@ -18,6 +18,7 @@ import java.security.NoSuchProviderException;
 import java.security.SignatureException;
 import java.security.UnrecoverableEntryException;
 import java.security.cert.CertificateException;
+import java.util.logging.Logger;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String SAMPLE_ALIAS = "MYALIAS";
+    public static final int IV_SIZE = 12;
 
     Toolbar toolbar;
 
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     private void decryptText() {
         try {
             tvDecryptedText.setText(decryptor
-                    .decryptData(SAMPLE_ALIAS, encryptor.getEncryption(), encryptor.getIv()));
+                    .decryptData(SAMPLE_ALIAS, encryptor.getEncryption()));
         } catch (UnrecoverableEntryException | NoSuchAlgorithmException |
                 KeyStoreException | NoSuchPaddingException | NoSuchProviderException |
                 IOException | InvalidKeyException e) {
@@ -99,12 +101,55 @@ public class MainActivity extends AppCompatActivity {
         try {
             final byte[] encryptedText = encryptor
                     .encryptText(SAMPLE_ALIAS, edTextToEncrypt.getText().toString());
+            final byte[] encryptedText2 =   encryptor.encryptText(SAMPLE_ALIAS,"My Name is Mr.INdia");
+            String str = decryptor.decryptData(SAMPLE_ALIAS, encryptedText2);
+
+            Log.d("MainActivity","str=" + str);
             tvEncryptedText.setText(Base64.encodeToString(encryptedText, Base64.DEFAULT));
         } catch (UnrecoverableEntryException | NoSuchAlgorithmException | NoSuchProviderException |
                 KeyStoreException | IOException | NoSuchPaddingException | InvalidKeyException e) {
             Log.e(TAG, "onClick() called with: " + e.getMessage(), e);
         } catch (InvalidAlgorithmParameterException | SignatureException |
                 IllegalBlockSizeException | BadPaddingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+testCrypto();
+    }
+    private void testCrypto(){
+        try {
+          byte[] encData =   encryptor.encryptText(SAMPLE_ALIAS,"TestData1");
+            String str = decryptor.decryptData(SAMPLE_ALIAS,encData);
+            Log.d("AESSample","decrypted data1=" + str);
+
+            byte[] encData2 =   encryptor.encryptText(SAMPLE_ALIAS,"TestData2");
+            String str2 = decryptor.decryptData(SAMPLE_ALIAS,encData2);
+            Log.d("AESSample","decrypted data2=" + str2);
+        } catch (UnrecoverableEntryException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (KeyStoreException e) {
+            e.printStackTrace();
+        } catch (NoSuchProviderException e) {
+            e.printStackTrace();
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidAlgorithmParameterException e) {
+            e.printStackTrace();
+        } catch (SignatureException e) {
+            e.printStackTrace();
+        } catch (BadPaddingException e) {
+            e.printStackTrace();
+        } catch (IllegalBlockSizeException e) {
             e.printStackTrace();
         }
     }

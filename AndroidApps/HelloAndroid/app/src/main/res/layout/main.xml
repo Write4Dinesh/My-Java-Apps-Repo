@@ -64,4 +64,35 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button_layout"
         tools:listitem="@layout/list_item_template" />
+    <LinearLayout
+        android:id="@+id/permission_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#2E2D2B"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:id="@+id/location_perm_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:maxWidth="250dp"
+            android:text="@string/location_permission_desc"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/location_settings_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/allow_location_permission"
+            android:textColor="#319f52"
+            android:textSize="14sp" />
+    </LinearLayout>
 </RelativeLayout>

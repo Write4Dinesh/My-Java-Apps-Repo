@@ -22,7 +22,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
     <output url="file://$MODULE_DIR$/build/intermediates/classes/debug" />
     <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/debug" />
     <exclude-output />
@@ -95,8 +95,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 4 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="ormlite-core-4.43" level="project" />
-    <orderEntry type="library" exported="" name="ormlite-android-4.43" level="project" />
-    <orderEntry type="library" exported="" name="annotations-android-4" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:C.\AndroidStudioWorkspace\samples\MySampleAppsRepo\AndroidApps\HelloAndroid\app\libs\ormlite-core-4.43.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:C.\AndroidStudioWorkspace\samples\MySampleAppsRepo\AndroidApps\HelloAndroid\app\libs\ormlite-android-4.43.jar:unspecified@jar" level="project" />
   </component>
 </module>

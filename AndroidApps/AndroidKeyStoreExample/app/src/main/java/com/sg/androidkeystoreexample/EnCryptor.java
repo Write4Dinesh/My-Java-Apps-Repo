@@ -10,6 +10,7 @@ import java.security.InvalidKeyException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
+import java.security.SecureRandom;
 import java.security.SignatureException;
 import java.security.UnrecoverableEntryException;
 import java.security.spec.AlgorithmParameterSpec;
@@ -21,16 +22,6 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
-/**
- * ______        _____                  _
- * |  ____|      / ____|                | |
- * | |__   _ __ | |     _ __ _   _ _ __ | |_ ___  _ __
- * |  __| | '_ \| |    | '__| | | | '_ \| __/ _ \| '__|
- * | |____| | | | |____| |  | |_| | |_) | || (_) | |
- * |______|_| |_|\_____|_|   \__, | .__/ \__\___/|_|
- * __/ | |
- * |___/|_|
- */
 class EnCryptor {
 
     private static final String TRANSFORMATION = "AES/GCM/NoPadding";
@@ -50,10 +41,17 @@ class EnCryptor {
 
         final Cipher cipher = Cipher.getInstance(TRANSFORMATION);
         cipher.init(Cipher.ENCRYPT_MODE, getSecretKey(alias));
+        byte[] iv = cipher.getIV();
+        byte[] encrypted = cipher.doFinal(textToEncrypt.getBytes("UTF-8"));
+        encryption = appendIV(encrypted, iv);
+        return encryption;
+    }
 
-        iv = cipher.getIV();
-
-        return (encryption = cipher.doFinal(textToEncrypt.getBytes("UTF-8")));
+    private byte[] appendIV(byte[] encrypted, byte[] initVector) {
+        byte[] finalEn = new byte[encrypted.length + initVector.length];
+        System.arraycopy(encrypted, 0, finalEn, 0, encrypted.length);
+        System.arraycopy(initVector, 0, finalEn, encrypted.length, initVector.length);
+        return finalEn;
     }
 
     @NonNull
@@ -77,4 +75,12 @@ class EnCryptor {
     byte[] getIv() {
         return iv;
     }
+
+    private byte[] genIV() {
+        SecureRandom ran = new SecureRandom();
+        byte[] key = new byte[MainActivity.IV_SIZE];
+        ran.nextBytes(key);
+        return key;
+    }
 }
+

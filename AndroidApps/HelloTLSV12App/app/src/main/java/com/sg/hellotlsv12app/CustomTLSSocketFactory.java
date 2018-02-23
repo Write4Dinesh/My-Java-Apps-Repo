@@ -24,7 +24,7 @@ public class CustomTLSSocketFactory extends SSLSocketFactory {
     public CustomTLSSocketFactory() throws KeyManagementException, NoSuchAlgorithmException {
         SSLContext context = SSLContext.getInstance("TLS");
         context.init(null, null, null);
-        internalSSLSocketFactory = context.getSocketFactory();
+        internalSSLSocketFactory = context.getSocketFactory(); System.loadLibrary("");
     }
 
     @Override
