@@ -16,17 +16,25 @@ public class AsyncTask<Request, Result, Progress> {
 
 	public Result doInBackground(Request request) {
 		isBackGroundThreadWorking = true;
-		System.out.println("Background Thread working..");
+		String threadName = Thread.currentThread().getName();
+		System.out.println("Executing in Background Thread:" + threadName);
 		for (int i = 0; i < MAX_PROGRESS; i++) {
 			mProgressQueue.add(i);
+			try {
+				Thread.sleep(100);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 		}
 		isBackGroundThreadWorking = false;
+		System.out.println("Execution completed by Background Thread:" + threadName);
 		mResult = (Result) "Out put data";
 		return mResult;
 	}
 
 	public void onPostExecute(Result result) {
-		System.out.println("Got the result in Main Thread:" + result);
+		String threadName = Thread.currentThread().getName();
+		System.out.println("Task Completed: Got the result=" + result + " in Main Thread:" + threadName);
 	}
 
 	public void execute(Request request) {
@@ -43,14 +51,13 @@ public class AsyncTask<Request, Result, Progress> {
 		}
 
 		onPostExecute((Result) bThread.getResult());
-
-		System.out.println("Main Thread Exiting..");
 	}
 
 	public void onProgress(Progress progress) {
-		System.out.println("Progress.." + progress);
+		String threadName = Thread.currentThread().getName();
+		System.out.println("Thread:" + threadName + ": is updating:" + progress + "% complete");
 		try {
-			Runtime.getRuntime().exec("cls");
+			Runtime.getRuntime().exec("clear");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
