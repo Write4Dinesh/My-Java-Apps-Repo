@@ -1,6 +1,6 @@
-# My-Java-Sample-Apps-Repo
-<hr/>
-<h2>Core Java apps to demonstrate the below Java concepts</h2><br/>
+# My Java Sample Apps Repo
+
+<h2>Core Java apps to demonstrate the below Java concepts</h2></hr><br/>
 <h4>Multithreading concepts</h4>
  <ul><li>Android AsyncTask(Implemented my own)</ul>
  <ul><li>Threadpool</ul>
