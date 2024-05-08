@@ -11,15 +11,15 @@
   <ul><li><a href="https://github.com/Write4Dinesh/My-Java-Apps-Repo/tree/master/DinTreeMapApp">TreeMap</a></ul>
   
   <h4>Java cryptography concepts</h4>
- <ul><li>Symmetric key cryptography</ul>
+ <ul><li><a href="https://github.com/Write4Dinesh/My-Java-Apps-Repo/tree/master/DinJavaSymmetricCrypto"> Symmetric key cryptography</a></ul>
  
  <h4>Java UDP & TCP protocol concepts</h4>
- <ul><li>Java UDP sample</ul>
+ <ul><li><a href="https://github.com/Write4Dinesh/My-Java-Apps-Repo/tree/master/DinJavaUDPExample">Java UDP sample</a></ul>
  
  <h4>JavaCard API sample</h4>
- <ul><li>Hello Java Card sample</ul>
+ <ul><li><a href="https://github.com/Write4Dinesh/My-Java-Apps-Repo/tree/master/HelloJavaCard">Hello Java Card sample</a></ul>
  
  <h4>Java String splitting sample</h4>
- <ul><li>String splitting</ul>
- <ul><li>Wordwrapping sample</ul>
+ <ul><li><a href="https://github.com/Write4Dinesh/My-Java-Apps-Repo/tree/master/DinStringSplittingTest">String splitting</a></ul>
+ <ul><li><a href="https://github.com/Write4Dinesh/My-Java-Apps-Repo/tree/master/JaveWordWrappingExample">Wordwrapping sample</a></ul>
   
