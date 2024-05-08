@@ -1,4 +1,4 @@
-# My Java Sample Apps Repo
+# Java sample apps repo
 
 <h2>Core Java apps to demonstrate the below Java concepts</h2></hr><br/>
 <h4>Multithreading concepts</h4>
